@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="userinfo"
+            type="com.zhangs.mvvmdemo.bean.UserInfo"
+            />
+        <variable
+            name="viewModel"
+            type="com.zhangs.mvvmdemo.viewmodel.MainViewModel"/>
+    </data>
+    <LinearLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/tv_userName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text='@{"用户名："+userinfo.userName}'
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_userAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(userinfo.userAge)}"
+            />
+
+        <TextView
+            android:id="@+id/tv_userProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{userinfo.userProfile}"
+            />
+
+
+
+        <Button
+            android:id="@+id/btn_updateUserinfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{viewModel.updateUserInfo}"
+            android:text="更新用户数据"
+            />
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,72 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+android {
+    compileSdkVersion 27
+
+
+
+    defaultConfig {
+        applicationId "com.zhangs.jpushdemo"
+        minSdkVersion 15
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    signingConfigs {
+        debug {
+            keyAlias APP_KEY_ALIAS
+            keyPassword APP_KEY_PASSWORD
+            storeFile file(APP_STORE_FILE)
+            storePassword APP_STORE_PASSWORD
+        }
+
+        release {
+            keyAlias APP_KEY_ALIAS
+            keyPassword APP_KEY_PASSWORD
+            storeFile file(APP_STORE_FILE)
+            storePassword APP_STORE_PASSWORD
+        }
+    }
+
+    buildTypes {
+        debug{
+            minifyEnabled false
+            signingConfig signingConfigs.debug
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            manifestPlaceholders = [
+                    JPUSH_PKGNAME : "com.zhangs.jpushdemo",
+                    JPUSH_APPKEY : "71c869cbe61c21bcd525b447", //JPush上注册的包名对应的appkey.
+                    JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
+            ]
+        }
+
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            manifestPlaceholders = [
+                    JPUSH_PKGNAME : "com.zhangs.jpushdemo",
+                    JPUSH_APPKEY : "03b1cb96a46a59dd108c39a4", //JPush上注册的包名对应的appkey.
+                    JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
+            ]
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation 'cn.jiguang.sdk:jpush:3.1.1'  // 此处以JPush 3.1.1 版本为例。
+    implementation 'cn.jiguang.sdk:jcore:1.1.9'  // 此处以JCore 1.1.9 版本为例。
+}
