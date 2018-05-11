@@ -9,9 +9,9 @@ import android.graphics.RectF;
 import android.graphics.SweepGradient;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
+import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
 
 public class CircleProgressBar extends View {
@@ -99,9 +99,7 @@ public class CircleProgressBar extends View {
     public void reset(){
         currentPercent=0;
         isRotating=false;
-        if(rotateAnimation!=null){
-            rotateAnimation.cancel();
-        }
+        this.clearAnimation();
         invalidate();
     }
 
@@ -109,33 +107,32 @@ public class CircleProgressBar extends View {
      * 开启旋转
      */
     public void startRotation(){
-        if(currentPercent==100){
-            if(rotateAnimation==null){
-                rotateAnimation=new RotateAnimation(0,360f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
-                rotateAnimation.setDuration(500);
-                rotateAnimation.setRepeatCount(20);
-                rotateAnimation.setRepeatMode(Animation.RESTART);
-                rotateAnimation.setFillAfter(false);
-            }
-            if(!isRotating){
-                this.setAnimation(rotateAnimation);
-                rotateAnimation.start();
-            }
-            isRotating=true;
+        setCurrentPercent(100);
+        this.clearAnimation();
+        if (rotateAnimation == null) {
+            rotateAnimation = new RotateAnimation(0, 360f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+            rotateAnimation.setDuration(500);
+            rotateAnimation.setInterpolator(new LinearInterpolator());
+            rotateAnimation.setRepeatCount(Integer.MAX_VALUE);
+            rotateAnimation.setFillAfter(false);
+        }
+        if (!isRotating) {
+            this.startAnimation(rotateAnimation);
+            isRotating = true;
         }
     }
 
 
     public void stopRotation(){
         isRotating=false;
-        if(rotateAnimation!=null){
-            rotateAnimation.cancel();
-        }
+        this.clearAnimation();
     }
 
     @Override
     public void setVisibility(int visibility) {
         super.setVisibility(visibility);
-        isRotating=false;
+        if(visibility==GONE){
+            stopRotation();
+        }
     }
 }

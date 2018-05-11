@@ -8,11 +8,12 @@
 
     <com.zhangs.customviews.CircleProgressBar
         android:id="@+id/myview"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         app:current_percent="100"
         app:end_color="#f76b1c"
         app:start_color="#fad961"
+        app:line_width="2dp"
         android:layout_marginTop="50dp"
         android:layout_centerHorizontal="true"
         />
@@ -20,20 +21,26 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_alignParentBottom="true"
-        >
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="开始" />
+
         <Button
             android:id="@+id/btn_reset"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="重置"
-            />
+            android:text="重置" />
+
         <Button
             android:id="@+id/btn_add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="增加"
-            />
+            android:text="增加" />
+
     </LinearLayout>
 </RelativeLayout>
