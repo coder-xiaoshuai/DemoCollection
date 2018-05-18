@@ -15,4 +15,6 @@ public class ArrayListTest {
     }
 
     protected class inner{}
+
+
 }
