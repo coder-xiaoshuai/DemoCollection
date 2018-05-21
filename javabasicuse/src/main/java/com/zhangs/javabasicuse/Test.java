@@ -34,3 +34,11 @@ abstract class Taaa{
     protected abstract void f1();
     static final void fq(){}
 }
+
+class Foo {
+    final int i=1;
+    int j;
+    public void doSomething() {
+        System.out.println(++j + i);
+    }
+}
