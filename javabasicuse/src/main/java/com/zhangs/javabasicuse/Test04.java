@@ -13,5 +13,10 @@ public class Test04 {
     }
     public static void myMethod( ){
         y=x++ + ++x;
+        String a="";
     }
+    protected  void test04method(){}
+    private void test04method2(){}
+
+    protected static void hhhha(){}
 }
