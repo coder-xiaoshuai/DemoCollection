@@ -2,6 +2,7 @@ package com.zhangs.javabasicuse;
 
 import java.util.Date;
 public class SuperTest extends Date{
+
     private static final long serialVersionUID = 1L;
     private void test(){
         System.out.println(super.getClass().getName());
@@ -9,7 +10,12 @@ public class SuperTest extends Date{
 
     public static void main(String[]args){
         new SuperTest().test();
+        int x=5;
     }
+    public static final void Melll(){
+        String a[]=new String[]{};
+    }
+
 }
 
 

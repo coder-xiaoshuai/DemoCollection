@@ -5,12 +5,12 @@
 
     <!-- Required -->
     <permission
-        android:name=".permission.JPUSH_MESSAGE"
+        android:name="com.zhangs.jpushdemo.permission.JPUSH_MESSAGE"
         android:protectionLevel="signature"
         tools:replace="android:name" />
 
     <!-- Required -->
-    <!--<uses-permission android:name=".permission.JPUSH_MESSAGE" />-->
+    <uses-permission android:name="${applicationId}.permission.JPUSH_MESSAGE" />
     <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />

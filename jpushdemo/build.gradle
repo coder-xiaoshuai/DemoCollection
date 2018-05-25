@@ -38,6 +38,7 @@ android {
             minifyEnabled false
             signingConfig signingConfigs.debug
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            applicationIdSuffix ".dev"
             manifestPlaceholders = [
                     JPUSH_PKGNAME : "com.zhangs.jpushdemo",
                     JPUSH_APPKEY : "71c869cbe61c21bcd525b447", //JPush上注册的包名对应的appkey.
@@ -49,6 +50,7 @@ android {
             minifyEnabled false
             signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            applicationIdSuffix ".release"
             manifestPlaceholders = [
                     JPUSH_PKGNAME : "com.zhangs.jpushdemo",
                     JPUSH_APPKEY : "03b1cb96a46a59dd108c39a4", //JPush上注册的包名对应的appkey.

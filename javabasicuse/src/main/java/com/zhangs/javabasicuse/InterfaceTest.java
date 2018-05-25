@@ -1,4 +1,6 @@
 package com.zhangs.javabasicuse;
 
-public interface InterfaceTest {
+interface InterfaceTest {
+
+    public void main(String[] args);
 }
