@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
+ * js面试题
  * 写出一个函数，根据给定字符串var str='abdeasdeasdf',计算出次数出现最多得字符和次数
  */
 public class StringTest {
