@@ -1,6 +1,7 @@
 package com.zhangs.javabasicuse;
 
 public class Test2 {
+    public int x;
     public void add(Byte b) {
         b = b++;
     }
@@ -19,7 +20,6 @@ public class Test2 {
 
         byte b = (byte) (128);
         System.out.println("强制转换后b的值" + b);
-
 
         //  输出结果 a的值-128b的值127强制转换后b的值-128
 
