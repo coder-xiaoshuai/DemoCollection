@@ -7,6 +7,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * 写出一个函数，根据给定字符串var str='abdeasdeasdf',计算出次数出现最多得字符和次数
+ */
 public class StringTest {
 
     public static void countString(String str) {
@@ -48,5 +51,6 @@ public class StringTest {
 
     public static void main(String[] args){
         countString("abdeasdeasdfaaaaaaaaaaaa");
+        countString("abdeasdeasdfbbbbbbbbbbbbbbbb");
     }
 }
