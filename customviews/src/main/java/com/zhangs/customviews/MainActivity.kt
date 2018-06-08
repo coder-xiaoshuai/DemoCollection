@@ -2,7 +2,10 @@ package com.zhangs.customviews
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.view.MotionEvent
+import android.widget.AbsListView
 import kotlinx.android.synthetic.main.activity_main.*;
 import kotlin.math.absoluteValue
 
@@ -41,5 +44,13 @@ class MainActivity : AppCompatActivity() {
 
 
         return super.dispatchTouchEvent(ev)
+    }
+
+    fun test(){
+        var linearLayoutManager=LinearLayoutManager(this@MainActivity)
+        var mRecyclerView=RecyclerView(this@MainActivity)
+        mRecyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+
+        })
     }
 }

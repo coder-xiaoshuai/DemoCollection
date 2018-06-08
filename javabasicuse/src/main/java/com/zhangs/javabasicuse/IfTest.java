@@ -20,5 +20,14 @@ public class IfTest {
     public static void main(String[] args){
         System.out.println("c的值"+c(3));
         System.out.println("b的值"+b());
+
+
+        boolean flag=false;
+        flag=!flag;
+//        if(flag){
+//            flag=false;
+//        }else{
+//            flag=true;
+//        }
     }
 }

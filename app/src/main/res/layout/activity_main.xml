@@ -6,17 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <com.zhangs.democollection.MyLinearLayout1
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
 
-        <com.zhangs.democollection.MyLinearLayout2
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            ></com.zhangs.democollection.MyLinearLayout2>
-    </com.zhangs.democollection.MyLinearLayout1>
+            >
+            <CheckBox
+                android:id="@+id/main_cb_choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/main_btn_chanage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="动态改变checkbox的状态"
+                />
+        </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
