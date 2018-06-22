@@ -2,6 +2,7 @@ package com.zhangs.kotlindemo
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -10,6 +11,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         method3(1,5,5,5,5,5,5,5)
         HelloWorld().addMethod()
+        tv_hello.text="wojosjfkjdslafsljdl fsa"
     }
 
     fun method1(){

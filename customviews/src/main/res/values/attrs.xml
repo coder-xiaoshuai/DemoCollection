@@ -20,4 +20,15 @@
         <attr name="line_width" format="dimension"/>
         <attr name="current_percent" format="integer"/>
     </declare-styleable>
+
+    <declare-styleable name="DisplayView">
+        <!--收起按钮布局-->
+        <attr name="collapse_layout" format="reference" />
+        <!--展开按钮布局-->
+        <attr name="expand_layout" format="reference" />
+        <!--子布局之间的距离-->
+        <attr name="btn_spacing" format="dimension" />
+        <!--在 loop 模式下点击 view 直接展开，List 模式下响应子 view 点击-->
+        <attr name="click_loop_to_expand" format="boolean" />
+    </declare-styleable>
 </resources>
