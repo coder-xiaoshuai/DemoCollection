@@ -1,1 +1,1 @@
-include ':app', ':customviews', ':javabasicuse', ':mvvmdemo', ':jpushdemo', ':kotlindemo', ':javaapp', ':javaapp'
+include ':app', ':customviews', ':javabasicuse', ':mvvmdemo', ':jpushdemo', ':kotlindemo', ':javaapp', ':javaapp', ':baselib'
